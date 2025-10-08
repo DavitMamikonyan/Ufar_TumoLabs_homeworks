@@ -1,1 +1,19 @@
-sdsa
+int buttonPin = A0;
+int ledState = LOW;
+int lastButton = LOW;
+
+void setup()
+{
+  pinMode(A0, INPUT);
+}
+
+void loop()
+{
+  int buttonState = digitalRead(buttonPin);
+  if(buttonState==HIGH && lastButton == LOW)
+  {
+    ledState =!ledState;
+    delay(200);
+  }
+  lastButton = buttonState;
+}
